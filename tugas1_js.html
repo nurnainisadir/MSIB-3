@@ -1,0 +1,71 @@
+<script language="javascript">
+        //Tugas1 Javascript | Nurnaini
+
+        let pegawai = "Ridwan",
+            jabatan = "Manager",
+            status = "Menikah",
+            gapok,
+            tunjanganJabatan,
+            tunjanganKeluarga,
+            bpjs,
+            totalGaji;
+        
+        if (jabatan == 'Manager') {
+        gapok = 15000000;
+        }
+        else if (jabatan == 'Asisten Manajer') {
+        gapok = 10000000;
+        }
+        else if (jabatan == 'Staff') {
+        gapok = 5000000;
+        }
+        else {
+        gapok = 0;
+        }
+
+        tunjanganJabatan = (gapok * 15) / 100;
+        bpjs = (gapok * 10) / 100;
+        tunjanganKeluarga = status == "Menikah" ? (gapok * 20) / 100 : 0;
+        totalGaji = gapok + tunjanganJabatan + tunjanganKeluarga + bpjs;
+        
+        document.write(`
+        <h3>
+            Nama Pegawai : ${pegawai} <br>
+            Jabatan : ${jabatan} <br>
+            Status : ${status}
+        </h3>
+        <table border="1" cellpadding="5" cellspasing="0">
+        <thead bgcolor="green">
+            <tr>
+                <th>Data Gaji</th>
+                <th>Nominal Gaji</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Gaji Pokok</td>
+                <td align="right">${gapok}</td>
+            </tr>
+            <tr>
+                <td>Tunjangan Jabatan</td>
+                <td align="right">${tunjanganJabatan}</td>
+            </tr>
+            <tr>
+                <td>Tunjangan Keluarga</td>
+                <td align="right">${tunjanganKeluarga}</td>
+            </tr>
+            <tr>
+                <td>BPJS</td>
+                <td align="right">${bpjs}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th align="left">Total Gaji</th>
+                <th align="right">${totalGaji}</th>
+            </tr>
+        </tfoot>
+        </table>
+        `)
+
+</script>

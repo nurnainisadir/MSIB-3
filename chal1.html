@@ -1,0 +1,41 @@
+
+<!--Diketahui di sebuah kampung ada 100 mahasiswa
+cetak daftar mahasiswa ke dalam sebuat tabel
+dengan data:
+No, Nama, Alamat
+contoh :
+1 Mahasiswa 1 Jl. Bunga No. 1
+2 Mahasiswa 2 Jl. Bunga No. 2
+Ditabel untuk baris ganjil warna biru
+Ditabel untuk baris genap warna kuning-->
+
+<h3 align="center">Daftar Mahasiswa</h3>
+<table border="0" align="center" cellpadding="10" width="40%">
+        <thead>
+            <tr bgcolor="green">
+                <th>No</th>
+                <th>NAMA</th>
+                <th>ALAMAT</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <script language="javascript">
+            //static table
+            //Ganjil = aqua | genap = yellow green
+            var id, warna;
+            for(id = 1; id <=100; id++) {
+                warna = (id % 2 == 0) ? 'yellowgreen' : 'aqua';
+
+            //output
+            document.write(`
+                <tr bgcolor="${warna}">
+                <td>${id}</td>
+                <td>Mahasiswa${id}</td>
+                <td>Jl. Bunga No. ${id}</td>
+                </tr>
+            `);
+        }
+        </script>
+        </tbody>
+</table>
